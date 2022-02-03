@@ -1,3 +1,3 @@
-const fs = require('fs');
+import BudgetTracker  from "./budget-tracker.js";
 
-console.log(document.getElementById('input-description'));
+new BudgetTracker("#app");
