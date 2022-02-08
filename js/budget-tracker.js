@@ -46,8 +46,8 @@ export default class BudgetTracker {
                     <tr>
                      
                       <td colspan="5" class="summary">
-                          <strong>Total:</strong>
-                          <span class="total">$0.00</span>
+                          <strong>Remain:</strong>
+                          <span class="remain">$0.00</span>
                       </td>
                     </tr>
                 </tfoot>
@@ -109,12 +109,12 @@ export default class BudgetTracker {
       return income + (amount * modifier);
     }, 0);
 
-    const total = income - expense;
+    const remain = income - expense;
 
     const totalFormatted = new Intl.NumberFormat("en-US", {
       style: "currency", 
       currency: "USD", 
-    }).format(total);
+    }).format(remain);
 
     const incomeFormatted = new Intl.NumberFormat("en-US", {
       style: "currency", 
@@ -126,7 +126,7 @@ export default class BudgetTracker {
       currency: "USD", 
     }).format(expense);
 
-    this.root.querySelector(".total").textContent = totalFormatted;
+    this.root.querySelector(".remain").textContent = totalFormatted;
     this.root.querySelector(".income").textContent = incomeFormatted;
     this.root.querySelector(".expense").textContent = expenseFormatted;
   }
